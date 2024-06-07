@@ -1,4 +1,4 @@
-# 项目
+# Deb
 [![编译状态](https://github.ruijc.com:20443/api/badges/dronestock/drone/status.svg)](https://github.ruijc.com:20443/dronestock/drone)
 [![Golang质量](https://goreportcard.com/badge/github.com/dronestock/drone)](https://goreportcard.com/report/github.com/dronestock/drone)
 ![版本](https://img.shields.io/github/go-mod/go-version/dronestock/drone)
@@ -9,7 +9,7 @@
 ![最佳语言](https://img.shields.io/github/languages/top/dronestock/drone)
 ![星星个数](https://img.shields.io/github/stars/dronestock/drone?style=social)
 
-Drone插件模板，要编写Drone插件，可以从此模板开始创建项目
+持续集成系统Deb插件，用于快速生成Debain/Ubuntu等类系统安装包
 
 ## 使用
 
@@ -17,7 +17,7 @@ Drone插件模板，要编写Drone插件，可以从此模板开始创建项目
 
 ```yaml
 - name: 上传到腾讯云
-  image: ccr.ccs.tencentyun.com/dronestock/cos
+  image: ccr.ccs.tencentyun.com/dronestock/deb
   settings:
     secret_id: xxx
     secret_key: xxx
