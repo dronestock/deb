@@ -1,0 +1,30 @@
+Package: {{ .Name }}
+Version: {{ .Version }}
+
+{{- if ne .Sesion "" -}}
+Section: {{ .Section }}
+{{- end -}}
+
+{{- if ne .Priority "" -}}
+Priority: {{ .Priority }}
+{{- end -}}
+
+{{- if ne .Essential "" -}}
+Essential: {{ .Essential }}
+{{- end -}}
+
+{{- if ne .Arch "" -}}
+Architecture: {{ .Architecture }}
+{{- end -}}
+
+{{- if ne .Maintainer nil }}
+Maintainer: {{ .Maintainer }}
+{{- end -}}
+
+{{- if ne .Provide "" -}}
+Provides: {{ .Provide }}
+{{- end -}}
+
+{{- if ne .Description "" -}}
+Description: {{ .Description }}
+{{- end -}}

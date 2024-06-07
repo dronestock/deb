@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/dronestock/deb/internal"
 	"github.com/dronestock/drone"
-	"github.com/dronestock/todo/internal"
 )
 
 func main() {

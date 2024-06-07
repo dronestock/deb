@@ -1,12 +1,17 @@
 package internal
 
 import (
+	"github.com/dronestock/deb/internal/internal/config"
+	"github.com/dronestock/deb/internal/internal/step"
 	"github.com/dronestock/drone"
-	"github.com/dronestock/todo/internal/internal/step"
 )
 
 type plugin struct {
 	drone.Base
+
+	Package config.Package `default:"${PACKAGE}" json:"package,omitempty"`
+	Source  config.Source  `default:"${SOURCE}" json:"source,omitempty"`
+	To      config.To      `default:"${TO}" json:"to,omitempty"`
 }
 
 func New() drone.Plugin {
@@ -19,6 +24,6 @@ func (p *plugin) Config() drone.Config {
 
 func (p *plugin) Steps() drone.Steps {
 	return drone.Steps{
-		drone.NewStep(step.NewTodo()).Name("样例").Build(),
+		drone.NewStep(step.NewPrepare()).Name("样例").Build(),
 	}
 }
