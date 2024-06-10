@@ -1,13 +1,13 @@
 # Deb
-[![编译状态](https://github.ruijc.com:20443/api/badges/dronestock/drone/status.svg)](https://github.ruijc.com:20443/dronestock/drone)
-[![Golang质量](https://goreportcard.com/badge/github.com/dronestock/drone)](https://goreportcard.com/report/github.com/dronestock/drone)
-![版本](https://img.shields.io/github/go-mod/go-version/dronestock/drone)
-![仓库大小](https://img.shields.io/github/repo-size/dronestock/drone)
-![最后提交](https://img.shields.io/github/last-commit/dronestock/drone)
-![授权协议](https://img.shields.io/github/license/dronestock/drone)
-![语言个数](https://img.shields.io/github/languages/count/dronestock/drone)
-![最佳语言](https://img.shields.io/github/languages/top/dronestock/drone)
-![星星个数](https://img.shields.io/github/stars/dronestock/drone?style=social)
+[![编译状态](https://github.ruijc.com:20443/api/badges/dronestock/deb/status.svg)](https://github.ruijc.com:20443/dronestock/deb)
+[![Golang质量](https://goreportcard.com/badge/github.com/dronestock/deb)](https://goreportcard.com/report/github.com/dronestock/deb)
+![版本](https://img.shields.io/github/go-mod/go-version/dronestock/deb)
+![仓库大小](https://img.shields.io/github/repo-size/dronestock/deb)
+![最后提交](https://img.shields.io/github/last-commit/dronestock/deb)
+![授权协议](https://img.shields.io/github/license/dronestock/deb)
+![语言个数](https://img.shields.io/github/languages/count/dronestock/deb)
+![最佳语言](https://img.shields.io/github/languages/top/dronestock/deb)
+![星星个数](https://img.shields.io/github/stars/dronestock/deb?style=social)
 
 持续集成系统Deb插件，用于快速生成Debain/Ubuntu等类系统安装包
 
@@ -50,4 +50,4 @@
 
 本项目通过`Jetbrains开源许可IDE`编写源代码，特此感谢
 
-[![Jetbrains图标](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)](https://www.jetbrains.com/?from=dronestock/drone)
+[![Jetbrains图标](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)](https://www.jetbrains.com/?from=dronestock/deb)

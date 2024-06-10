@@ -4,8 +4,8 @@ import (
 	"github.com/dronestock/deb/internal/internal/config"
 )
 
-type Control struct {
+type Shortcut struct {
 	*config.Package
-
-	Architecture string `json:"architecture,omitempty"`
+	*config.Source
+	*config.To
 }
