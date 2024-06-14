@@ -7,4 +7,6 @@ type To struct {
 	Arch string `default:"${ARCH=amd64}" json:"arch,omitempty" validate:"oneof=i386 amd64 all"`
 	// 架构列表
 	Architectures []string `default:"${ARCHITECTURES}" json:"architectures,omitempty"`
+	// 快捷方式
+	Shortcut *Shortcut `default:"${SHORTCUT}" json:"shortcut,omitempty"`
 }

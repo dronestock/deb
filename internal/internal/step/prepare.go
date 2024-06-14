@@ -21,12 +21,15 @@ import (
 //go:embed internal/template/control.gohtml
 var controlTemplate string
 
+//go:embed internal/template/shortcut.gohtml
+var shortcutTemplate string
+
 type Prepare struct {
 	pkg    *config.Package
 	source *config.Source
 	to     *config.To
 
-	cp *command.Copy
+	cp     *command.Copy
 	logger log.Logger
 	_      gox.CannotCopy
 }
@@ -57,37 +60,49 @@ func (p *Prepare) Run(ctx context.Context) (err error) {
 }
 
 func (p *Prepare) run(ctx context.Context, arch string, err *error) {
-	work := fmt.Sprintf("/tmp/deb/%s/%s",p.pkg.Name, arch)
-	debian :=filepath.Join(work, "DEBIAN")
-	source:=filepath.Join(work, p.to.Target)
-	if mce := p.mkdir(debian); nil!= mce {
+	work := fmt.Sprintf("/tmp/deb/%s/%s", p.pkg.Name, arch)
+	debian := filepath.Join(work, "DEBIAN")
+	source := filepath.Join(work, p.to.Target)
+	if mce := p.mkdir(debian); nil != mce {
 		*err = mce
-	}else if mse:=p.mkdir(source);nil!=mse{
-		*err=mse
-	}else if cse:=p.cp.Exec(ctx, p.source.Directory, source);nil!=cse{
-		*err=cse
-	}else {
-		*err=p.makeControl(ctx, arch,filepath.Join(debian, "control"))
+	} else if mse := p.mkdir(source); nil != mse {
+		*err = mse
+	} else if cse := p.cp.Exec(ctx, p.source.Directory, source); nil != cse {
+		*err = cse
+	} else {
+		*err = p.makeControl(ctx, arch, filepath.Join(debian, "control"))
 	}
 
 	return
 }
 
-func (p *Prepare) processShortcut() (err error) {
-	if p.to.Shortcut{
+func (p *Prepare) processShortcut(basedir string) (err error) {
+	if nil == p.to.Shortcut {
 		return
 	}
 
+	shortcut := new(data.Shortcut)
+	shortcut.Package = p.pkg
+	shortcut.Source = p.source
+	shortcut.To = p.to
 
+	path := filepath.Join(basedir, "/usr/share/applications", fmt.Sprintf("%s.desktop", shortcut.Name))
+	if tfe := template.New(shortcutTemplate).Data(shortcut).Build().ToFile(path); nil != tfe {
+		err = tfe
+	} else if info, se := os.Stat(path); nil != se {
+		err = se
+	} else { // !增加可执行权限
+		err = os.Chmod(path, info.Mode()|0o100)
+	}
 
 	return
 }
 
-func (p *Prepare) makeControl(_ context.Context, arch string,path string) (err error) {
+func (p *Prepare) makeControl(_ context.Context, arch string, path string) (err error) {
 	control := new(data.Control)
 	control.Package = p.pkg
 	control.Architecture = arch
-	err = template.New(controlTemplate).Data(control).Build().ToFile(path))
+	err = template.New(controlTemplate).Data(control).Build().ToFile(path)
 
 	return
 }
