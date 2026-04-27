@@ -4,7 +4,7 @@ go 1.23
 
 require (
 	github.com/dronestock/drone v1.2.5
-	github.com/goexl/args v0.0.1
+	github.com/goexl/args v0.0.3
 	github.com/goexl/gex v0.4.3
 	github.com/goexl/gfx v0.1.7
 	github.com/goexl/gox v1.9.2
