@@ -1,12 +1,12 @@
 module github.com/dronestock/deb
 
-go 1.23
+go 1.24
 
 require (
 	github.com/dronestock/drone v1.2.5
 	github.com/goexl/args v0.0.1
 	github.com/goexl/gex v0.4.3
-	github.com/goexl/gfx v0.1.7
+	github.com/goexl/gfx v0.2.8
 	github.com/goexl/gox v1.9.2
 	github.com/goexl/log v0.0.7
 )
@@ -14,7 +14,7 @@ require (
 require (
 	github.com/drone/envsubst v1.0.3 // indirect
 	github.com/expr-lang/expr v1.16.9 // indirect
-	github.com/fsnotify/fsnotify v1.6.0 // indirect
+	github.com/fsnotify/fsnotify v1.9.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.4 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
@@ -33,6 +33,6 @@ require (
 	github.com/rs/xid v1.5.0 // indirect
 	golang.org/x/crypto v0.24.0 // indirect
 	golang.org/x/net v0.26.0 // indirect
-	golang.org/x/sys v0.21.0 // indirect
-	golang.org/x/text v0.16.0 // indirect
+	golang.org/x/sys v0.32.0 // indirect
+	golang.org/x/text v0.24.0 // indirect
 )
