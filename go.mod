@@ -1,6 +1,6 @@
 module github.com/dronestock/deb
 
-go 1.23
+go 1.24
 
 require (
 	github.com/dronestock/drone v1.2.5
@@ -8,7 +8,7 @@ require (
 	github.com/goexl/gex v0.4.3
 	github.com/goexl/gfx v0.1.7
 	github.com/goexl/gox v1.9.2
-	github.com/goexl/log v0.0.7
+	github.com/goexl/log v0.1.0
 )
 
 require (
