@@ -5,7 +5,7 @@ go 1.24
 require (
 	github.com/dronestock/drone v1.2.6
 	github.com/goexl/args v0.0.3
-	github.com/goexl/gex v0.4.6
+	github.com/goexl/gex v0.4.8
 	github.com/goexl/gfx v0.2.8
 	github.com/goexl/gox v1.9.2
 	github.com/goexl/log v0.1.0
@@ -22,8 +22,8 @@ require (
 	github.com/go-resty/resty/v2 v2.15.2 // indirect
 	github.com/goexl/baozheng v0.0.1 // indirect
 	github.com/goexl/env v0.0.2 // indirect
-	github.com/goexl/exception v0.0.1 // indirect
-	github.com/goexl/guc v0.1.4 // indirect
+	github.com/goexl/exception v0.0.3 // indirect
+	github.com/goexl/guc v0.1.5 // indirect
 	github.com/goexl/http v0.2.0 // indirect
 	github.com/goexl/mengpo v0.2.6 // indirect
 	github.com/goexl/xiren v0.0.8 // indirect
